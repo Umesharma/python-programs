@@ -1,0 +1,149 @@
+#01
+'''class vehicle:
+    def __init__(self,maxspeed,mileage) -> None:
+        self.maxspeed=maxspeed
+        self.mileage=mileage
+    def show(self):
+        print('max spped is:',self.maxspeed)
+        print('mileage is:',self.mileage)
+
+ferrari=vehicle(250,30)
+ferrari.show()'''
+#02
+'''class Vehicle:
+
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+class bus(Vehicle):
+    def show(self):
+        print('bus name is:',self.name)
+        print('max spped is:',self.max_speed)
+        print('mileage is:',self.mileage)
+tata=bus('school bus',250,30)
+tata.show()'''
+#03
+'''class Vehicle:
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+    def seating_capacity(self, capacity):
+        return f"The seating capacity of a {self.name} is {capacity} passengers"
+class bus(Vehicle):
+    def seating_capacity(self, capacity=50):
+        return super().seating_capacity(capacity=50)
+tata=bus('passenger-bus',100,35)
+print(tata.seating_capacity())'''
+#04
+'''class Vehicle:
+    color='white'
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+class Bus(Vehicle):
+    pass
+
+class Car(Vehicle):
+    pass
+tata=Bus('tata',180,45)
+nano=Car('nano',250,50)
+print('color:',tata.color ,'name:',tata.name,'max_speed:',tata.max_speed,'mileage:',tata.mileage)
+print('color:',nano.color ,'name:',nano.name,'max_speed:',nano.max_speed,'mileage:',nano.mileage)'''
+#05
+'''class Vehicle:
+    def __init__(self, name, mileage, capacity):
+        self.name = name
+        self.mileage = mileage
+        self.capacity = capacity
+
+    def fare(self):
+        return self.capacity * 100
+
+class Bus(Vehicle):
+    def fare(self):
+        # return (self.capacity*100)*11/10
+        amount=super().fare()
+        amount+= (amount )*10/100
+        return amount
+
+School_bus = Bus("School Volvo", 12, 50)
+print("Total Bus fare is:", School_bus.fare())'''
+#06
+'''class Vehicle:
+    def __init__(self, name, mileage, capacity):
+        self.name = name
+        self.mileage = mileage
+        self.capacity = capacity
+
+class Bus(Vehicle):
+    pass
+
+School_bus = Bus("School Volvo", 12, 50)
+print(type(Bus))'''
+#07
+'''class Vehicle:
+    def __init__(self, name, mileage, capacity):
+        self.name = name
+        self.mileage = mileage
+        self.capacity = capacity
+
+class Bus(Vehicle):
+    pass
+
+School_bus = Bus("School Volvo", 12, 50)
+print(isinstance(School_bus,Vehicle))'''
+#
+'''def make_account():
+    return {'balance': 0}
+
+def deposit(account, amount):
+    account['balance'] += amount
+    return account['balance']
+
+def withdraw(account, amount):
+    account['balance'] -= amount
+    return account['balance']
+a=make_account()
+b=make_account()
+print(deposit(a,100))
+print(withdraw(a,80))
+print(deposit(b,799))
+print(withdraw(b,70))'''
+#
+'''class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def withdraw(self, amount):
+        self.balance -= amount
+        return self.balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+a=BankAccount()
+b=BankAccount()
+print(a.deposit(100))
+print(a.withdraw(50))
+print(b.deposit(400))
+print(b.withdraw(78))'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
