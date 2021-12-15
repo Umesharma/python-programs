@@ -1,0 +1,12 @@
+'''def concatenate(*args):
+    result = None
+    for i in args:
+        if result == None:
+            result = i
+        else:
+            result += "-" + i
+    return result
+print(concatenate('I','LOVE','PYTHON','!'))'''
+'''def concatenate (*args):
+     return '-'.join(args)
+print(concatenate("I","love","python","!"))'''
