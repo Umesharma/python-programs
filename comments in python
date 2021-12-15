@@ -1,0 +1,6 @@
+print('''Twinkle, twinkle, little star,
+How I wonder what you are!
+Up above the world so high,
+Like a diamond in the sky.''')
+# is used for  single line comments ctrl+/ is shortcut for comment and uncomment.
+''' is used for multiple line comment or input a string of multiple lines inside print function.'''
