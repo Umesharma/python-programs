@@ -1,0 +1,246 @@
+#Print unique rows in a given boolean matrix using Set with tuples
+'''mat = [[0, 1, 0, 0, 1],
+             [1, 0, 1, 1, 0],
+             [0, 1, 0, 0, 1],
+             [1, 1, 1, 0, 0]]
+# res=[]
+res=set()
+for i in mat:
+    i=tuple(i)
+    # res.append(i)
+    res.add(i)
+for i in res:
+    print(i)'''
+# to find valid ip address.
+'''def valid_ip_add(IP:str):
+    def isip4(s):
+
+        return str(int(s))==s and 0<=int(s)<=255
+    ip4=IP.split('.')
+    if len(ip4)==4 and all(isip4(n) for n in ip4):
+        return ' it is a valid IPV4 address.'
+print(valid_ip_add('255.255.111.35'))'''
+#Python Dictionary to find mirror characters in a string
+'''org='abcdefghijklmnopqrstuvwxyz'
+rev='zyxwvutsrqponmlkjihgfedcba'
+dictionary=dict(zip(org,rev))
+# print(dictionary)
+str='pneumonia'
+n=5
+for i in range(len(str)):
+    if i >=n  :
+        str=str.replace(str[i],dictionary[str[i]])
+        # print(dictionary[str[i]])
+print(str)'''
+#Generate two output strings depending upon occurrence of character in input string in Python
+'''str = "geeksforgeeks"
+res1=[]
+res2=set()
+for i in str:
+    if str.count(i)==1:
+        res1.append(i)
+    else:
+        res2.add(i)
+        
+print('String with characters occurring once:',(sorted(res1)))
+print('String with characters multiple times :',(sorted(res2)))'''
+# function to remove all consecutive duplicates
+# from the string in Python
+'''from itertools import groupby
+def removeAllConsecutive(input):
+	
+	# group all consecutive characters based on their
+	# order in string and we are only concerned
+	# about first character of each consecutive substring
+	# in given string, so key value will work for us
+	# and we will join these keys without space to
+	# generate resultant string
+	result = []
+	for (key,group) in groupby(input):
+		result.append(key)
+
+	print (''.join(result))
+	
+# Driver program
+if __name__ == "__main__":
+	input = 'aaaaabbbbbb'
+	removeAllConsecutive(input)'''
+#Convert a list of characters into a string
+'''a=['g', 'e', 'e', 'k', 's', 'f', 'o', 
+             'r', 'g', 'e', 'e', 'k', 's']
+res=''.join(i for i in a)
+print(res)'''
+#Remove empty tuples from a list
+'''tuples = [(), ('ram','15','8'), (), ('laxman', 'sita'), 
+                  ('krishna', 'akbar', '45'), ('',''),()]
+res=[]
+for i in tuples:
+    if i :
+        res.append(i)
+print(res)'''
+#
+# tuples = ('z','a','d','f','g','e','e','k')
+'''a=tuples[::-1]
+print(a)'''
+'''new_tup=()
+for k in reversed(tuples):
+    new_tup=new_tup+(k,)# , is imp 
+print(new_tup)'''
+#Python math function | modf()
+'''modf() function is an inbuilt function in Python that returns the fractional and integer parts of the number in a two-item tuple. Both parts have the same sign as the number. The integer part is returned as a float.
+TypeError:  If anything other then a float number is passed, it returns a type error. '''
+'''import math 
+print(math.modf(100.12))'''
+# print(math.modf('456.98')) throws type error
+
+#Python code to convert into dictionary
+'''a=[("akash", 10), ("gaurav", 12), ("anand", 14), ("suraj", 20), ("akhil", 25), ("ashish", 30)]
+res1=[]
+res2=[]
+for j in a :
+    res1.append(j[0])
+    res2.append(j[1])
+dictionary=dict(zip(res1,res2))
+print(dictionary)'''
+#using setdefault
+'''list_1=[("Nakul",93), ("Shivansh",45), ("Samved",65),
+		("Yash",88), ("Vidit",70), ("Pradeep",52)]
+dict=dict() 
+for a,b in list_1:
+    dict.setdefault(a,[]).append(b)
+print(dict)'''
+# dict func 
+'''list_1=[("Nakul",93), ("Shivansh",45), ("Samved",65),
+		("Yash",88), ("Vidit",70), ("Pradeep",52)]
+dict=dict(list_1)
+print(dict) '''
+# Sort a tuple by its float element
+'''tuple = [('lucky', '18.265'), ('nikhil', '14.107'), 
+                  ('akash', '24.541'), ('anand', '4.256'), ('gaurav', '10.365')]
+a=sorted(tuple,key=lambda x:x[1],reverse=True)
+print(a)'''
+#Count occurrences of an element in a Tuple
+'''tuple=(10,8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2)
+n=10
+for i in tuple:
+    if i==n:
+        print(f'count of {i} is {tuple.count(i)}')
+        break
+'''
+#Count the elements in a list until an element is a Tuple
+'''li = [4, 5, 6, 10, (1, 2, 3), 11, 2, 4]
+count=0
+for i in li:
+    if isinstance(i,tuple):
+        break
+    else:
+        count+=1
+print(count)'''
+#Sort Tuples in Increasing Order by any key here inderx m=2
+'''tup=[(23, 45, 20), (25, 44, 39), (89, 40, 23)]
+        #  m = 2
+tup=sorted(tup,key=lambda x:x[2])
+print(tup)'''
+# using namedtuple
+'''from collections import namedtuple
+student = namedtuple('student',['name','age','dob'])
+s1=student('nikki','21','08112021')
+print('age is:',s1[1])
+print('name is:',s1.name)
+#Conversion Operations
+li = ['Manjeet', '19', '411997']
+print("The namedtuple instance using iterable is  : ")
+print(student._make(li))
+#
+print("The OrderedDict instance using namedtuple is  : ")
+print(s1._asdict())
+#
+di = {'name': "Nikhil", 'age': 19, 'dob': '1391997'}
+print("The namedtuple instance from dict is  : ")
+print(student(**di))'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
