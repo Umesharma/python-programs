@@ -1,0 +1,17 @@
+class employee:
+    company='indane'
+    salary=5600
+    salarybonus=500
+    # totalsalary =6100
+    #here totalsalary depends on salary and salary bonus so we can take ut as a property 
+    @property # is called getter method
+    def totalsalary(self):
+        return self.salary+self.salarybonus
+    @totalsalary.setter #is called setter method.
+    def totalsalary(self,val):
+        self.salarybonus=val-self.salary #it adjusts salarybonus acc to val of total salary given.
+e=employee()
+print(e.totalsalary)#() is misssing ,hence it is working as a property and not a function.
+e.totalsalary=5800 #property can be changed.
+print(e.salary)
+print(e.salarybonus)
