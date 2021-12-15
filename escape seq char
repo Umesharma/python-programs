@@ -1,0 +1,34 @@
+#dictionary ; collection of key value pairs
+# syntax dic-name={key1:val1,key2:val2}
+a={}#to create empty dic
+print(type(a))
+mydic={"brave":"lion","fast":"cheetah","wise":'fox','marks':[1,4,5],'anotherdic':{'nick':'name'},'ektuplebhi':(3,5,6),1:2}
+print(mydic['fast'])
+print(mydic['marks'])
+print(mydic['anotherdic'])
+print(mydic['ektuplebhi'])
+#prperties:
+''' 
+it is unorderd.
+it is mutable(can be changed)
+it is indexed
+keys cant be same but diff value otherwise it will override previous value.'''
+#dic methods
+print(mydic.keys()) #print all keys of dic
+print(type(mydic.keys()))#type is not a list but a class dict_keys
+print(list(mydic.keys())) # keys converted into list.
+print(mydic.values())#print all values
+print(mydic.items())#print list of all key and their value in form of a tuple
+updic={'nikku':'myself','fast':'fox&owl'}#it can also update the existing key value pairs.
+mydic.update(updic)#dic is updated with respective key value pair in the end.
+print(mydic)
+print(mydic.get('brave'))#to get value 
+print(mydic['brave'])#to get value
+'''interview que :
+why we use .get metod insted of square bracket ? if we put brave 2 in get ,we get none but the same will throw "key error" in ['brave2'] since it is not available in dictionary .
+print(mydic.get('brave2'))#will say none
+print(mydic['brave2'])# will throw key error'''
+#set new key with default value none also get value of the specified key.
+mydic.setdefault('hello')
+print(mydic)
+print(mydic.setdefault('wise'))
