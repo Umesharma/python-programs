@@ -1,0 +1,802 @@
+#01 whether string is palindrome ,symetrical or not.
+'''str=input('enter a string:')
+l=len(str)
+# print(l)
+a=(l-1)//2 #nitin
+# print(a)
+res1=[]
+res2=[]
+for i in range(a+1):
+    res1.append(str[i])
+# print(res1)
+for i in range(a+1,l):
+    res2.append(str[i])
+# print(res2)
+if res1==res2:
+    print('string is symmetrical')
+    #note: words like nitin,madam are not symmetrical.
+res3=[]
+res4=[]
+for i in reversed(range(l)):
+    res3.append(str[i])
+# print(res3)
+for i in range(l):
+    res4.append(str[i])
+# print(res4)
+if res3==res4:
+    print('str is palindrome.')'''
+#02 reverse words in a given str
+# str='elephant is big'
+'''res=[]
+l=len(str)
+for i in reversed(range(l)):
+    res.append(str[i])
+print(res)'''
+''' or
+words=str.split()
+# print(words)
+res=' '.join(reversed(words))
+print(res)'''
+#removing ith character from string.
+# str1='elephant is big'
+'''new_str=str1[:3]+str1[4:]
+print(new_str)'''
+'''str1=str1.replace('p','',1)
+print(str1)'''
+'''new_str=''
+for i in range(len(str1)):
+    if i!=3:
+        new_str=new_str+str1[i]#adding new_str is imp otherwise value gets updated and eventually becomes g.
+print(new_str)'''
+'''new_str=''.join(str1[i] for i in range(len(str1)) if i!=3)
+print(new_str)'''
+#to find length of str 
+# str='elephant'
+# print(len(str))
+'''words=str.split()
+count=0
+for i in words:
+    for j in i :
+        count+=1
+print(count)'''
+'''new_str=''
+new_str=(new_str.join(str)).count(new_str)-1
+print(new_str)'''
+#length of string excluding spaces
+'''test_str='geeksforgeeks 33 is   best'
+a=sum(not i.isspace() for i in test_str)
+print(a)
+b=sum(map(len,(test_str.split())))
+print(b)'''
+#print even len of str
+'''test_str=' i am nikhil'
+new_str=test_str.split()
+a_str=''
+for i in new_str:
+    if len(i)%2==0:
+        a_str=a_str+i+' '
+        print()
+print(a_str)'''
+'''test_str='geeksforgeeks'
+a=len(test_str)//2
+new_str=''
+for i in range(a,len(test_str)):
+    new_str=new_str+test_str[i]
+    new_str=new_str.upper()
+org=''
+for i in range(a):
+    org=org+test_str[i]
+print(org 
++new_str)
+res=''.join([test_str[x].upper() if x >= a else test_str[x] for x in range(len(test_str))])
+print(res)'''
+#capitale first letter of every word in string.
+'''test_str='hello world'
+a=test_str.split()
+res=''
+for i in a :
+    res=res+i.capitalize()+' '
+print(res)'''
+# contain at least one num and one letter
+'''test_str=input('enter a string:')
+flag1=False 
+flag2=False
+for i in test_str:
+    if i.isalpha():
+        flag1=True
+    if i.isdigit():
+        flag2=True
+if (flag2 and flag1)==True:
+    print('this has both num and letter')
+else:
+    print('it doesn\'t include both num and digit.')'''
+# accept str if contain all vowels
+'''test_str=input('enter a string:')
+test_str=test_str.lower()
+# print(test_str)
+a=set()
+# b=set('aeiou')# ={ 'a','e','i','o','u'}
+b= { 'a','e','i','o','u'}#curly braces with only values inside is a set.
+# print(b)
+for i in test_str:
+    if i in b:
+        a.add(i)
+if a==b:
+    print('contain all vowels')#ABeeIghiObhkUul
+c=b-a
+for x in c:
+    print(x)'''
+#no of matching char in python 
+'''str1 = 'abcdef'
+str2 = 'defghia'
+a=set()
+for i in str1:
+    for j in str2:
+        if i ==j:
+            a.add(i)
+print(len(a))'''
+#no of vowels in str
+'''test_str='helloworld'
+a=('aeiou')
+count=0
+for i in test_str:
+    if i in a :
+        count+=1
+print(count)'''
+# remove duolicate char from string 
+# test_str='geeksforgeeks'
+'''#without order
+# test_str=''.join(set(test_str))
+#with order
+from collections import OrderedDict 
+test_str=''.join(OrderedDict .fromkeys(test_str))
+print(test_str)'''
+'''An OrderedDict is a dictionary that remembers the order of the keys that were inserted first. If a new entry overwrites an existing entry, the original insertion position is left unchanged.
+
+fromkeys() creates a new dictionary with keys from seq and values set to value and returns list of keys, fromkeys(seq[, value]) is the syntax for fromkeys() method.
+
+Parameters :
+
+seq : This is the list of values which would be used for dictionary keys preparation.
+value : This is optional, if provided then value would be set to this value.'''
+'''s=set(test_str)
+s=''.join(s)
+# print(s)
+res=[]
+for i in test_str:
+    if i in s and i in test_str:
+        res.append(i)
+        test_str=test_str.replace(i,'',5)
+        # print(test_str)
+res=''.join(res)
+print(res)'''
+#min freq of char 
+# test_str='geekforgeeks'
+'''freq={}
+for i in test_str:
+    if i in freq:
+        freq[i]+=1
+    else:
+        freq[i]=1
+a=min(freq,key=freq.get)
+print(a)'''
+'''from typing import Counter
+res=[]
+res=Counter(test_str)
+a=min(res,key=res.get)
+# print(res)
+print(a)'''
+#odd freq character 
+'''from typing import ValuesView
+
+
+test_str='geekforgeeks'
+freq={}
+for i in test_str:
+    if i in freq:
+        freq[i]+=1
+    else:
+        freq[i]=1
+b=[i for i in freq.values()]
+c=[j for j in freq.keys()]
+print(c)
+print(b)
+res=[]
+for i in range(len(b)):
+    if b[i]%2!=0:
+        res.append(c[i])
+res=''.join(res)
+print(res)'''
+#count integer in str 
+'''test_str='geek4geeks is no 1 4 geeks'
+import re
+a=len(re.findall(r'\d+',test_str))
+print(a)'''
+#rejecting str if contain special chara
+'''a=input('enter a str:')
+import re
+b= re.compile('[!@~_#$%^&*()<>?\|/}{:]')
+if(b.search(a)==None):
+    print(' str accepted')
+else:
+    print('str not accepted.')'''
+# find random word
+'''import random
+import string
+import time
+possible_combo=string.ascii_lowercase+string.ascii_uppercase+string.digits+'~!@#$%^&*()_+}{'
+t='click!!'
+attempted=''.join(random.choice(possible_combo) for i in range(len(t)))
+next_attempt=''
+done = False
+count=0
+while done==False:
+    print(attempted)
+    next_attempt=''
+    done=True
+    for i in range(len(t)):
+        if attempted[i]!=t[i]:
+            done=False
+            next_attempt+= random.choice(possible_combo)
+        else:
+            next_attempt+=t[i]
+    count+=1
+    attempted=next_attempt
+    time.sleep(0.1)
+print("Target matched after " +
+      str(count) + " iterations")'''
+# remove ith char of str
+'''str='geeks'
+for i in range(len(str)):
+    if i==1:
+        str=str.replace(str[i],'',1)
+print(str)'''
+#split and join
+'''str='geek for geeks'
+str=str.split()
+# print(str)
+str='_'.join(i for i in str)
+print(str)'''
+# check if binary or not 
+# str=input('enter a str:')
+'''binary=False
+for i in range(len(str)):
+    if str[i]=='0' or str[i]=='1':
+        binary=True
+        # print('hey')
+    else:
+        binary=False
+        break
+if binary==True:
+    print('str is binary.')
+else:
+    print('str is not binary.')'''
+'''p=set(str)
+q={'0','1'}
+if p==q or p=={'0'} or p=={'1'}:
+    print('str is binary')
+else:
+    print('str is not binary.')'''
+# find all close matches
+'''from difflib import get_close_matches
+Patterns=['ape', 'apple', 'peach', 'puppy']
+word = 'appel'
+print(get_close_matches(word,Patterns))'''
+# find uncommon words in str
+'''str1='geeks for geeks'
+str2='learning from geeks for geeks'
+p=str1.split()
+p=set(p)
+q=str2.split()
+q=set(q)
+if len(q)>len(p):
+    a=q-p
+    print(a)
+else:
+    a=p-q
+    print(a)'''
+# replace comma with dot and dot with str.
+'''str='14,625,498.002'
+str=str.replace(',','/')
+str=str.replace('.',',')
+str=str.replace('/','.')
+print(str)'''
+#url filter
+'''string = 'My Profile:https://auth.geeksforgeeks.org/user/Chinmoy%20Lenka/articles in the portal of http://www.geeksforgeeks.org/'
+a=string.split()
+print(a[-1:])'''
+#
+# code = """ 
+# a = 6+5
+# print(a)
+# """
+'''def exec_code():
+    exec(code)
+exec_code()'''
+# exec(code)
+# exec in itself is a str type so req no print stat.
+
+#advanced str 
+#words into num
+'''dict={'zero':'0','one':'1','two':'2','three':'3','four':'4','five':'5','six':'6','seven':'7','eight':'8','nine':9}
+str='zero two one three five four'
+# str=str.split()
+print(str)
+a=''.join([dict[i] for i in str.split()])
+print(a)'''
+#find index of specific word 
+'''test_str = 'geeksforgeeks is best for geeks'
+test_str=test_str.split()
+word='best'
+for i in range(len(test_str)):
+    if test_str[i] == word:
+        print(i)'''
+#rotate a str by d ele ,d=2
+'''str="Geeks"
+l1=str[0:2]
+l2=str[2:]
+print(l2+l1)
+r1=str[0: len(str)-2]
+r2=str[-2:]
+print(r2+r1)'''
+# find  min no of left or right rotations to get a specific pattern 
+'''str="Geeks"
+i=0
+# for i in range(1,len(str)+1):
+while i>=0:
+    l1=str[0:i]
+    l2=str[i:]
+    l=l2+l1
+    # print(l)
+    r1=str[0: len(str)-i]
+    r2=str[-i:]
+    r=(r2+r1)
+    # print(r)
+    if l=='Geeks':
+        print(f'you need {i} no of  min left rotations.')
+        break 
+    if r=='Geeks':
+        print(f'you need {i} no of min right rotations.')
+        break
+        
+    i+=1'''
+# count no of repetitions for each word
+# str = 'Gfg is best . Geeks are good and Geeks like Gfg'
+'''list_str=str.split()
+test_str=list(set(str.split()))
+print(test_str)
+no=[]
+count=0
+for i in test_str:
+    for j in list_str:
+        # print(j)
+        if i==j:
+            # print(i)
+            # print(j)
+            count+=1
+    no.append(count)
+    count=0
+print(no)
+a=[(i,j) for i,j in zip(test_str,no)]
+print(a)'''
+'''res = {key: str.count(key) for key in str.split()}
+print(res)'''
+'''from collections import Counter
+res = Counter(str.split())
+# print(dict(res))
+# print(res)'''
+# find count of specific word
+'''str = 'geeksforgeeks is best for geeks. A geek should take interest.'
+res=[]
+word='geeks'
+import re 
+a= re.findall(word,str)
+print(len(list(a)))'''
+# sort string on count of s 
+'''
+test_list = ["geekforgeeks", "is", "best", "for", "geeks"]
+res=sorted(test_list,key=lambda x:-x.count('s')) #- is used for reversing value.
+print(res)'''
+#convert snake into pascal case.
+# str='geeks_for_geeks'
+# str=str.split()
+'''for i in str:
+    # print(i)
+    if i=='_':
+        str=str.replace(i,' ')
+# print(str)
+str=str.split()
+# print(len(str))
+for i in range(0,len(str)):
+    if i==0 or i==len(str)-1:
+        str[i]=str[i].capitalize()
+        # print(str[i])
+str=''.join(i for i in str)
+print(str)'''
+#.title() use
+'''res = str.replace("_", " ").title().replace(' ','')
+print(res)'''
+#capwords use 
+'''import string
+res = string.capwords(str.replace("_", " ")).replace(' ','')
+print(res)'''
+#print 4*7*8*3*2*1*9
+'''test_list = [4, 7, 8, 3, 2, 1, 9]
+# a='*'.join(test_list[i] for i in range(0,len(test_list)))
+res=[]
+for i in range(len(test_list)):
+    res.append(test_list[i])
+    if i!=len(test_list)-1:
+        res.append('*')
+a=''.join(str(i) for i in res)
+b='*'.join(str(i) for i in test_list)
+print(b)
+print(a)'''
+# corr req 
+# test_list = ['geekforgeeks', 'is', 'best', 'for', 'geeks']
+# # a=[str[i] if str[i]!=str[j] for i in range(test_list[0]) for j in range(len(test_list[0]-1))]
+# a=list(set(test_list[0]))
+# dict={k:i for k in a for i in range(0,7)}
+# print(dict)
+# print(sorted(a))
+
+# k=int(input('enter index no :'))
+
+# for i in range(len(test_list[0])):
+#      for j in range(1,len(test_list[0])):
+#          if test_list[i]!=test_list[j]:
+#              a.append(test_list[i])
+# print(test_list)
+#
+# note: if string is ritated by x times ,then it is exact after right rotation of (n-x) times,where n is length odf str 
+'''str='ABCD'
+temp=str+str
+l=len(str)
+res=[]
+print('all left rotations are:')
+for i in range(l):
+    res.append(' ')
+    for j in range(l):
+        print(temp[i+j],end='')
+        res.append(temp[i+j])
+    print()
+res=''.join(i for i in res)
+res=res.rsplit()
+print('res are:',res)
+if 'CDAB' in res:
+    print('pattern is a rotation of str')
+else:
+    print('pattern is not a rotation of str')'''
+# left and right rot 
+'''test_str = 'geeksforgeeks'
+r_rot=7
+l_rot=3
+#left rot first thn right rot
+l_word=test_str[3:]+test_str[0:3] 
+r_word=l_word[-7:]+l_word[0:-7]
+print(r_word)
+#right rot first thn left rot
+r_word=test_str[-7:]+test_str[0:-7]
+l_word=r_word[3:]+r_word[0:3]
+print(l_word)
+#both are same '''
+#exceptional str
+'''import re
+test_str = "gfg, is, (best, for), geeks"
+# res = re.split(r', (?!\S\)|\()', test_str)
+res = re.split(r',', test_str)
+print("The string after exceptional split : " + str(res))'''
+# split string whenever vowel come 
+'''import re
+test_str = 'GFGaBste4oCS'
+res=re.split('a|e|i|o|u',test_str)
+print(res)'''
+#
+'''test_str='void'
+mir_dict = {'b':'d', 'd':'b', 'i':'i', 'o':'o', 'v':'v', 'w':'w', 'x':'x'}
+res=''
+for ele in test_str:
+    if ele in mir_dict:
+        res+=mir_dict[ele]
+    else:
+        res='not possible'
+        break
+print(res)'''
+# replace list of words by a single word.
+'''test_str = 'Geeksforgeeks is best for geeks and CS'
+word=['best','for','and']
+re_word='ghada'
+import re 
+res=' '.join([re_word if x in word else x  for x in test_str.split()])
+print(res)'''
+# Replace Different characters in String at Once
+'''test_str='geeksforgeeks is best'
+map_dict = {'e':'1', 'b':'6'} 
+for i in test_str:
+    if i in map_dict:
+        test_str=test_str.replace(i,map_dict[i])
+print(test_str)'''
+#Multiple indices Replace in String
+'''test_str = 'geeksforgeeks is best'
+test_list = [2, 4, 7, 10]
+rep_chr='*'
+for i in range(len(test_str)):
+    if i in test_list:
+        test_str=test_str.replace(test_str[i],rep_chr)
+print(test_str)'''
+#Ways to remove multiple empty spaces from string List
+'''test_list = ['gfg', '   ', ' ', 'is', '            ', 'best']
+res=[]
+for i in test_list:
+    if i.strip():
+        res.append(i)
+print(res)'''
+#
+# test_str = "Gfg, is best : for ! Geeks ;"
+# punc = '''!()-[]}{;:'"\,<>./?@#$%^&*_~'''
+'''for i in test_str:
+    if i in punc:
+        test_str=test_str.replace(i,'')
+print(test_str)'''
+#Similar characters Strings comparison
+'''test_str1 = 'e!e!k!s!g'
+test_str2 = 'g!e!e!k!s' #delim=!
+test_str1=sorted(test_str1)
+test_str2=sorted(test_str2)
+if test_str2==test_str1:
+    print('both have same characters')
+else:
+    print('no')'''
+#Remove K length Duplicates from String
+'''str = 'geeksforfreeksfo'
+res=[]
+for i in range(len(str)-2):
+    a=str[i]+str[i+1]+str[i+2]
+    res.append(a)
+
+print(res)
+for i in res:
+    if str.count(i)==2:
+        # print('yes')
+        str=str.replace(i,'',1)
+print(str)'''
+# g with x(or any suffix)
+'''test_list = ['allx', 'lovex', 'gfg', 'xit', 'is', 'bestx']
+suff='x' '''
+'''for i in test_list[:]:
+    if i.endswith(suff):
+        test_list.remove(i)'''
+'''res=[ele for ele in test_list if  not ele.endswith(suff) ] 
+# print(test_list)
+print(res)'''
+#
+# str='geeksforgeeeks'
+'''str='hello'
+a=set()
+for i in range(len(str)-1):
+    for j in range(i+1,len(str)):
+        if str[i]==str[j]:
+            a.add(str[i])
+print(a)'''
+# Replace duplicate Occurrence in String(at diff positions)
+'''str='Gfg is best . Gfg also has Classes now. Classes help understand better .'
+str=str.split()
+my_dict={'Gfg':'it','Classes':'they'}
+# a=' '.join(my_dict[i] if i in my_dict else i for i in str.split() )
+# print(a)
+res=set()
+for i,ele in enumerate(str):
+    if ele in my_dict:
+        if ele in res:
+            str[i]=my_dict[ele]
+            print(i)
+        else:
+            res.add(ele)
+res = ' '.join(str)
+print(res)'''
+#ways to convert str into dict 
+'''str = " Jan = January; Feb = February; Mar = March"
+a=dict(substring.split('=') for substring in str.split(';'))
+print(a)'''
+#if one string is key and second is of values
+'''str1 = "Jan, Feb, March"
+str2 = "January | February | March"
+keys=str1.split(',')
+values=str2.split('|')
+dictionary={}'''
+'''for i in range(len(keys)):
+    dictionary[keys[i]]=values[i]
+print(dictionary)'''
+'''dictionary=dict(zip(keys,values))
+print(dictionary)'''
+#if string in itself is a dictionary
+'''str = '{"Jan" : "January", "Feb" : "February", "Mar" : "March"}'
+import ast
+dictionary= ast.literal_eval(str)
+print(dictionary)'''
+# if str is a substring of another str
+'''test_str1 = "geeksforgeeks"
+test_str2 = "gfks"'''
+'''res=all(ele for ele in test_str2 if ele in test_str1)#true if true for every ele 
+print(res)'''
+'''res=set(test_str2) .issubset (test_str1)
+print(res)'''
+#binary str of len n
+'''n=int(input('enter length of binary str:'))
+import random
+res=''.join (str(random.randint(0,1)) for i in range(n))
+print(res)'''
+# reverse sort a str 
+'''test_string = "geekforgeeks"
+a=''.join(sorted(test_string,reverse=True))
+print(a)'''
+#Check if a Substring is Present in a Given String
+# using all() 
+'''test_str1 = "geeksforgeeks"
+test_str2 = "gfks"'''
+'''res=all(ele for ele in test_str2 if ele in test_str1)#true if true for every ele 
+print(res)'''
+#using .issubset()
+'''res=set(test_str2) .issubset (test_str1)
+print(res)'''
+# using .find()
+'''string = "geeks for geeks"
+sub_str ="geek" '''
+'''if (string.find(sub_str)==-1):
+    print('not present')
+else:
+    print('yes present')'''
+#using .count()
+'''if(string.count(sub_str)>0):
+    print('yes present')
+else:
+    print('not present')'''
+#using regex 
+'''import re 
+if re.search(sub_str,string):
+    print('yes present')
+else:
+    print('not present')'''
+#Substring presence in Strings List
+'''test_list1 = ['Gfg', 'is', 'best']
+test_list2 = ['I love Gfg', 'Its Best for Geeks', 'Gfg means CS']
+for i in test_list1:
+    # print(i)
+    for j in range(len(test_list2)):
+        if i in test_list2[j]:
+            print('true')
+            break
+        else:
+            print('false')
+            break'''
+# all substring with freq
+'''test_str ='GFGF'
+res=[]
+for i in range(len(test_str)):
+    for j in range(i+1,len(test_str)+1):
+        a=test_str[i:j]
+        res.append(a)
+print(res)
+b=set()
+e=[]
+for i in res:
+    c=test_str.count(i)
+    e.append(c)
+d=dict(zip(res,e))
+print(d)'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
