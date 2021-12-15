@@ -1,0 +1,37 @@
+#function :set of statements used to do certain task.
+#function definion: stuff written inside the func'
+#function call by : func()
+'''def percent(marks):#marks takes arguments
+    p=sum(marks)/4
+    return p
+marks1=[20,30,50,70]
+marks2=[40,50,60,50]
+per1=percent(marks1)
+per2=percent(marks2)
+print(per1,per2)'''
+#02 using *args
+'''def percent(*marks):
+    p=sum(marks1)/4
+    return p
+marks1=[20,30,50,70]
+print(percent(marks1))'''
+#pro1
+'''def greet(name):
+    print("good morning!!"+ str(name))
+print(greet('nikhil'))'''
+#types of func
+'''1.built-in func: sum(),len() etc.
+2.user defined func: made by user like greet() above ,starts with def and may or may not have a return type.'''
+#func with arguments: a func can accept some values it can work with.
+#func can also return values as shown below.
+'''def sum(n1,n2):
+    p=n1+n2
+    return p
+print(sum(4,5))'''
+#we can also take default argument in a func.
+'''def greet(name='stranger'):
+    return'good morning '+name
+
+print(greet('nikhil'))
+print(greet()) #takes default value i.e stranger.'''
+
