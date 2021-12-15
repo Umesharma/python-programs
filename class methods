@@ -1,0 +1,21 @@
+class employee:
+    company='camle'
+    salary =100
+    location='delhi'
+    # def changesalary(self,sal):
+        # self.salary=sal#create instance attribute
+
+    # to change class attr
+    #class method : method bound to class and not obj
+    @classmethod
+    def changeclasssalary(cls,sal): #cls is a needed arg while doing this.
+        cls.salary=sal
+        
+
+e=employee()
+print(e.salary)
+# e.changesalary(500)
+# print(e.salary)#change object instance attr
+print(employee.salary) #class attr 
+employee.changeclasssalary(600)#change class attr 
+print(employee.salary)#changed class attr
