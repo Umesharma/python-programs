@@ -1,0 +1,46 @@
+# we cant use if in lambda without else
+'''square= lambda x:x*x if (x>0) else None
+print(square(6))'''
+#Sorting string using order defined by another string
+'''pat = "asbcklfdmegnot" 
+str = "eksge"
+priority=list(pat)
+# print(priority)
+myDict = { priority[i] : i for i in range(len(priority))}
+print(myDict)
+str=sorted(str,key=lambda x:myDict[x],reverse=True)
+print(str)
+str=''.join(i for i in str)
+print(str)'''
+#fibonacci nos using lambda
+'''def fibonacci(count):
+	fib_list = [0, 1]
+
+	any(map(lambda x: fib_list.append(sum(fib_list[-2:])),range(2, count)))
+
+	return fib_list[:count]
+
+print(fibonacci(10))'''
+#odd and even count using lambda 
+'''list1 = [10, 21, 4, 45, 66, 93, 11]
+odd_count = len(list(filter(lambda x: (x%2 != 0) , list1)))
+even_count = len(list(filter(lambda x: (x%2 == 0) , list1)))
+print("Even numbers in the list: ", even_count)
+print("Odd numbers in the list: ", odd_count)'''
+# reduce()
+'''from functools import reduce 
+list1=[1,2,3,4,5]
+num=reduce(lambda x,y:x*y,list1)
+print(num)'''
+#
+
+
+
+
+
+
+
+
+
+
+
