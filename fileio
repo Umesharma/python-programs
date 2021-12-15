@@ -1,0 +1,17 @@
+f=open('message.txt','w')
+txt='''   i am nikhil
+i am a good boy
+haan nahi hu   ''' 
+f.write(txt)
+'''hmm=['i am',' a good',' boy'] #returns output as a single list
+f.writelines(hmm)'''
+
+
+# f=open('C:\\Users\\DELL\\Desktop\\python programs.py\\message.txt') can be open by giving address
+f=open('message.txt','r')# 'a' used for appending
+# data=f.read() #read all the data 
+# data=f.readline()# read single line starting from first above 3 inside parenthesis wii make it to read till the 3rd index 
+data=f.readlines()#read all lines in the form of list
+# data=f.readline() read data of 2nd line.
+print(data)
+f.close()
